@@ -1,0 +1,12 @@
+[Unit]
+Description=Hello World Service
+After=syslog.target
+
+[Service]
+User=opc
+Group=opc
+Type=simple
+Restart=always
+RestartSec=600
+
+ExecStart=/usr/lib/jvm/jre-21/bin/java -jar -Dspring.profiles.active=dev,vm /home/labuser/artifacts/helloworld-service.jar
